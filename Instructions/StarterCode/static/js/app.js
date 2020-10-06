@@ -25,13 +25,59 @@ data.forEach (obj => {
 searchButton.on("click",function() {
     table.html("");
     console.log("Loading Your Filter Results ...");
+    // date functionality
     var inputField = d3.select("#datetime");
     var inputElement = inputField.property("value");
     console.log(inputElement);
-    var inputArray = data.filter(x => x.datetime === inputElement);
-    console.log(inputArray) 
+    var inputArray = data.filter(d => d.datetime === inputElement);
+    console.log(inputArray);
+    inputArray.forEach((selection) => {
+        var row = table.append("tr");
+        Object.entries(selection).forEach(([key,value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });    
 
-})
+// // City Functionality
+// searchButton.on("click",function() {
+//     table.html("");
+//     console.log("Loading Your Filter Results ...");
+//     // date functionality
+//     var inputField = d3.select("#city");
+//     var inputElement = inputField.property("value");
+//     console.log(inputElement);
+//     var inputArray = data.filter(c => c.city === inputElement);
+//     console.log(inputArray) 
+
+    
+//     // State Functionality
+//     searchButton.on("click",function() {
+//         table.html("");
+//         console.log("Loading Your Filter Results ...");
+//         // date functionality
+//         var inputField = d3.select("#state");
+//         var inputElement = inputField.property("value");
+//         console.log(inputElement);
+//         var inputArray = data.filter(s => s.state === inputElement);
+//         console.log(inputArray)  
+   
+//     // Country Functionality
+//     var inputField = d3.select("#country");
+//     var inputElement = inputField.property("value");
+//     console.log(inputElement);
+//     var inputArray = data.filter(x => x.country === inputElement);
+//     console.log(inputArray) 
+//     // Shape Functionality
+//     var inputField = d3.select("#shape");
+//     var inputElement = inputField.property("value");
+//     console.log(inputElement);
+//     var inputArray = data.filter(x => x.shape === inputElement);
+//     console.log(inputArray) 
+
+// })
+
+
 
 
 
