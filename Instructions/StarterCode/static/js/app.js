@@ -11,6 +11,16 @@ var stateInput = d3.select("#state")
 var countryInput = d3.select("#country");
 var shapeInput = d3.select("#shape");
 
+// reading in the data from data.js
+data.forEach (obj => {
+    var row = table.append("tr");
+    Object.entries(obj).forEach(([key,value])=>{
+        console.log(`${key} and ${value}`)
+        var tdata = table.append("td");
+        tdata.text(value);
+    })
+});
+
 
 
 
