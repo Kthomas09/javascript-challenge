@@ -32,5 +32,16 @@ filter_table_button.on("click", ()=> {
 });
 
 tableData.forEach(function(ufo){
-    console.log(ufo);
-})
+    var row = table_body.append("tr");
+    Object.entries(ufo).forEach(function([key, value]) {
+        console.log(key, value);
+        var cell = row.append("td");
+        cell.text(value);
+    }) 
+});
+    
+    // var row = table_body.append("tr");
+    // Object.defineProperties(ufo).forEach(function([key, value]) {
+    //     var cell = row.append("td");
+    //     cell.text(value)
+    // }
