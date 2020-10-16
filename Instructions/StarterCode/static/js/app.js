@@ -43,6 +43,11 @@ filter_table_button.on("click", function(){
     table_body.html("");
     var inputElement = d3.select("#input");
     var inputValue = d3.inputElement.property("value");
-    console.log(inputValue)
+    var filtered_data = tableData.filter(ufo_sighting => ufo_sighting.datetime === inputValue ||
+                                                         ufo_sighting.city === inputValue ||
+                                                         ufo_sighting.state === inputValue ||
+                                                         ufo_sighting.country === inputValue ||
+                                                         ufo_sighting.shape === inputValue)
+    console.log(filtered_data)
 
 })
