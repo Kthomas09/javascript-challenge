@@ -34,14 +34,15 @@ filter_table_button.on("click", ()=> {
 tableData.forEach(function(ufo){
     var row = table_body.append("tr");
     Object.entries(ufo).forEach(function([key, value]) {
-        console.log(key, value);
         var cell = row.append("td");
         cell.text(value);
     }) 
 });
     
-    // var row = table_body.append("tr");
-    // Object.defineProperties(ufo).forEach(function([key, value]) {
-    //     var cell = row.append("td");
-    //     cell.text(value)
-    // }
+filter_table_button.on("click", function(){
+    table_body.html("");
+    var inputElement = d3.select("#input");
+    var inputValue = d3.inputElement.property("value");
+    console.log(inputValue)
+
+})
