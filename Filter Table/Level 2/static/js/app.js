@@ -46,6 +46,9 @@ buttonClick.on("click", function(){
     else if (shape) {
         filterData = filterData.filter(ufo=> ufo.shape === shape)
     }
+    else {
+        table_body.append("tr").append("td").text("No Sightings, Choose Another Date")
+    };
    
 // iterating through each filtered data from if statements to populate the HTML.
     filterData.forEach((ufo)=>{
@@ -56,86 +59,3 @@ buttonClick.on("click", function(){
         });
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
