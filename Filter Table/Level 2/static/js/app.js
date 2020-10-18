@@ -33,6 +33,9 @@ buttonClick.on("click", function(){
     else if (state) {
         filterData = filterData.filter(ufo => ufo.state === state)
     }
+    else if (country) {
+        filterData = filterData.filter(ufo => ufo.country === country)
+    }
    
     filterData.forEach((ufo)=>{
         var table_row = table_body.append("tr");
