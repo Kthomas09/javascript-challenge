@@ -27,11 +27,13 @@ buttonClick.on("click", function(){
     if (datetime) {
         filterData = filterData.filter(ufo => ufo.datetime === datetime);
     }
+    else if (city) {
+        filterData = filterData.filter(ufo => ufo.city === city)
+    }
    
     filterData.forEach((ufo)=>{
         var table_row = table_body.append("tr");
         Object.entries(ufo).forEach(([key, value])=>{
-            console.log(key, value);
             var table_cell = table_row.append("td");
             table_cell.text(value)
         });
