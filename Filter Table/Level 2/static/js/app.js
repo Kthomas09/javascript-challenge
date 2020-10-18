@@ -3,7 +3,10 @@ var tableData = data;
 var table_body = d3.select("tbody");
 
 tableData.forEach((ufo_sighting) =>{
-    console.log(ufo_sighting);
+    var table_row = table_body.append("tr");
+    Object.entries(ufo_sighting).forEach(([key,value])=>{
+        console.log(key,value);
+    })
 });
 
 
