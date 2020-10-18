@@ -32,9 +32,11 @@ buttonClick.on("click", function(){
         var table_row = table_body.append("tr");
         Object.entries(ufo).forEach(([key, value])=>{
             console.log(key, value);
-        })
-    })
-})
+            var table_cell = table_row.append("td");
+            table_cell.text(value)
+        });
+    });
+});
 
 
 
