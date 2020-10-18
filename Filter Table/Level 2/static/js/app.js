@@ -7,9 +7,34 @@ tableData.forEach((ufo_sighting) =>{
     Object.entries(ufo_sighting).forEach(([key,value])=>{
         var table_cell = table_row.append("td");
         table_cell.text(value)
-        console.log(value)
     })
 });
+
+var buttonClick = d3.select("#filter-btn");
+
+buttonClick.on("click", function(){
+    d3.select("tbody").html("");
+    d3.event.preventDefault();
+
+    var datetime = d3.select("#datetime").property("value");
+    var city = d3.select("#city").property("value");
+    var state = d3.select("#state").property("value");
+    var country = d3.select("#country").property("value");
+    var shape = d3.select("#shape").property("value");
+
+    filterData = tableData;
+
+    if (datetime) {
+        filterData = filterData.filter(ufo => ufo.datetime === datetime);
+    }
+   
+    filterData.forEach((ufo)=>{
+        var table_row = table_body.append("tr");
+        Object.entries(ufo).forEach(([key, value])=>{
+            console.log(key, value);
+        })
+    })
+})
 
 
 
