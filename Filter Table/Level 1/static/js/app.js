@@ -24,7 +24,7 @@ addData(tableData);
 filter_table_button.on("click", ()=> {
     d3.event.preventDefault();
     var date = dateInputField.property("value").trim();
-    var filterDate = tableData.filter(tableData=>tableData.datetime === date);
+    var filterDate = tableData.filter(data=>data.datetime === date);
     table_body.html("");
     let response = {
         filterDate
